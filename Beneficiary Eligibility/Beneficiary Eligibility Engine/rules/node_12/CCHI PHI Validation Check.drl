@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>CCHI PHI Validation Check</name>
+  <uuid>9a0fd24b-f475-4bde-852d-7f6caf825529</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	'CCHI PHI Validation' is true
+	and 'more than 25 for single' is "Check CCHI PHI Validation"
+then
+	set decision to "Set Partial Eligible" ;
+else 
+	set decision to "Check MHRSD Employment Status" ;
+ ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

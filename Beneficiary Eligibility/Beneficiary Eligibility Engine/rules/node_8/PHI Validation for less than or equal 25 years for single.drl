@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>PHI Validation for less than or equal 25 years for single</name>
+  <uuid>199dc9e7-a849-4120-a1ff-aeb7a7be80cf</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	MOI is "Single" and Age is at most 25  
+then
+	set decision to "Check CCHI PHI Validation" ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

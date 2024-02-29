@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>c3d88aa6-556e-4b0b-aa75-8bde17ff49bd</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="diagram" namespace="">
+    <extensionElements>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_0" name="MHRSD Parents Employment Status">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MHRSDParentsEmploymentStatus" collection="false" name="MHRSD Parents Employment Status"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_0_ii" name="MHRSD Parents Employment Status" typeRef="cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MHRSDParentsEmploymentStatus"/>
+    </inputData>
+    <decision id="node_1" name="Eligibility">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MHRSDParentsEmploymentStatus" collection="false" name="MHRSD Parents Employment Status"/>
+                <input bomType="cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.Gender" collection="false" name="Gender"/>
+                <input bomType="cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MHRSDEmploymentStatus" collection="false" name="MHRSD Employment Status"/>
+                <input bomType="java.lang.Boolean" collection="false" name="CCHI PHI Validation"/>
+                <input bomType="java.lang.Double" collection="false" name="Age"/>
+                <input bomType="cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MaritalStatus" collection="false" name="Marital Status"/>
+                <output bomType="cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.Eligibility" collection="false" name="Eligibility"/>
+                <rule defaultRule="false" href="node_1/Eligibility%20Decision%20Table.dmt" kind="DecisionTable" name="Eligibility Decision Table"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Eligibility" typeRef="cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.Eligibility"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_4"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_6"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_2" name="Gender">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.Gender" collection="false" name="Gender"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_2_ii" name="Gender" typeRef="cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.Gender"/>
+    </inputData>
+    <inputData id="node_3" name="MHRSD Employment Status">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MHRSDEmploymentStatus" collection="false" name="MHRSD Employment Status"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_3_ii" name="MHRSD Employment Status" typeRef="cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MHRSDEmploymentStatus"/>
+    </inputData>
+    <inputData id="node_4" name="CCHI PHI Validation">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.Boolean" collection="false" name="CCHI PHI Validation"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_4_ii" name="CCHI PHI Validation" typeRef="java.lang.Boolean"/>
+    </inputData>
+    <inputData id="node_5" name="Age">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.Double" collection="false" name="Age"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_5_ii" name="Age" typeRef="java.lang.Double"/>
+    </inputData>
+    <inputData id="node_6" name="Marital Status">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MaritalStatus" collection="false" name="Marital Status"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_6_ii" name="Marital Status" typeRef="cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MaritalStatus"/>
+    </inputData>
+</definitions>
+</definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Check MHRSD Parent Employment Status Gov or None</name>
+  <uuid>c7df1a9d-9a04-4cc6-bf3b-2b3032a1189f</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	'MHRSD Parents Employment Status' is "Both in Government or None"
+	and 'Decision 9' is "Check MHRSD Parents Employment Status"
+then
+	set decision to "Full Eligible" ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

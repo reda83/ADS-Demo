@@ -1,0 +1,40 @@
+
+package cp4admin._cnhi_eligibility_engine_demo.beneficiary_eligibility.maritalstatus;
+
+
+class BeneficiaryStatus
+        property ads.typeId "3"
+        property com.fasterxml.jackson.annotation.JsonTypeName "BeneficiaryStatus"
+        #de.generated
+{
+    cp4admin._cnhi_eligibility_engine_demo.beneficiary_eligibility.maritalstatus.MaritalStatus maritalStatus
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "MaritalStatus"
+                #update;
+    BeneficiaryStatus(cp4admin._cnhi_eligibility_engine_demo.beneficiary_eligibility.maritalstatus.MaritalStatus maritalStatus)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    BeneficiaryStatus()
+                #dataio.default;
+}
+
+class MaritalStatus
+        extends java.lang.Enum
+        property ads.typeId "1"
+        property com.fasterxml.jackson.annotation.JsonTypeName "MaritalStatus"
+        #de.generated
+{
+    domain {static divorced, static married, static single}
+    static final readonly cp4admin._cnhi_eligibility_engine_demo.beneficiary_eligibility.maritalstatus.MaritalStatus divorced
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Divorced";
+    static final readonly cp4admin._cnhi_eligibility_engine_demo.beneficiary_eligibility.maritalstatus.MaritalStatus married
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "Married";
+    static final readonly cp4admin._cnhi_eligibility_engine_demo.beneficiary_eligibility.maritalstatus.MaritalStatus single
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "Single";
+}
+

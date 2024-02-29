@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Full Eligibility Check</name>
+  <uuid>42259fe8-1bba-46cb-af20-f099e72efe61</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	'Decision 11' is "Full Eligible"
+	or 'Decision 9' is "Full Eligible"
+	or 'Decision 10' is "Full Eligible"
+then
+	set decision to "Full Eligible" ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

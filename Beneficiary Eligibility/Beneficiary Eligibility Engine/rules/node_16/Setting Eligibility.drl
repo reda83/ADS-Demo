@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Setting Eligibility</name>
+  <uuid>7740f343-0ba2-40c3-99c2-da0a925b9710</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	Private is "Partial Eligible"
+then
+	set decision to "Partial Eligible" ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Checking MHRSD Employment Status</name>
+  <uuid>03527782-8afc-4d10-a953-3044f9ddc48c</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	'MHRSD Employment Status for Married' is "Check MHRSD Employment Status"
+	and 'MHRSD Employment Status' is "Private"
+then
+	set decision to "Set Partial Eligible" ;
+else 
+    set decision to "Set Full Eligible" ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

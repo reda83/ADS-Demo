@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Married Decision Table">
+  <name>Married-Decision-Table</name>
+  <uuid>c154ac90-bded-408c-8ffc-187e14bfb7ff</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#8de6a354-b797-490d-9f09-26113336a1bb"/>
+  <targetRuleProject href="../../Married%20Decision%20Table#f8b324cd-3f23-486a-8646-121372587efd"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

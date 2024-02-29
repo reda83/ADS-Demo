@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
+  <name>Eligibility Decision Table</name>
+  <uuid>8408ad62-0bff-425e-b104-b128f0c4f861</uuid>
+  <locale>en_US</locale>
+  <definition><DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
+    <Body>
+        <Properties>
+            <Property Name="UI.MediaType"><![CDATA[Web]]></Property>
+            <Property Name="UI.RenderBoolean" Type="xs:boolean"><![CDATA[true]]></Property>
+        </Properties>
+        <Structure>
+            <ConditionDefinitions>
+                <ConditionDefinition Id="C0">
+                    <Properties>
+                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
+                        <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[false]]></Property>
+                    </Properties>
+                    <ExpressionDefinition>
+                        <Text><![CDATA['Marital Status' is <a Marital Status>]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C1">
+                    <Properties>
+                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
+                        <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[false]]></Property>
+                    </Properties>
+                    <ExpressionDefinition>
+                        <Text><![CDATA[Age is <a number>]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C2">
+                    <Properties>
+                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
+                        <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[false]]></Property>
+                    </Properties>
+                    <ExpressionDefinition>
+                        <Text><![CDATA['CCHI PHI Validation' is <a boolean>]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C3">
+                    <Properties>
+                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
+                        <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[false]]></Property>
+                    </Properties>
+                    <ExpressionDefinition>
+                        <Text><![CDATA['MHRSD Employment Status' is <a MHRSD Employment Status>]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C4">
+                    <Properties>
+                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
+                        <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[false]]></Property>
+                    </Properties>
+                    <ExpressionDefinition>
+                        <Text><![CDATA[Gender is <a Gender>]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C5">
+                    <Properties>
+                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
+                        <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[false]]></Property>
+                    </Properties>
+                    <ExpressionDefinition>
+                        <Text><![CDATA['MHRSD Parents Employment Status' is <a MHRSD Parents Employment Status>]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+            </ConditionDefinitions>
+            <ActionDefinitions>
+                <ActionDefinition Id="A0">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[set decision to <an Eligibility>]]></Text>
+                    </ExpressionDefinition>
+                </ActionDefinition>
+            </ActionDefinitions>
+        </Structure>
+        <Contents>
+            <Partition DefId="C0">
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[Single]]></Param>
+                    </Expression>
+                    <Partition DefId="C1">
+                        <Condition>
+                            <Expression>
+                                <Text><![CDATA[<a number> is at most <a number>]]></Text>
+                                <Param><![CDATA[25]]></Param>
+                            </Expression>
+                            <Partition DefId="C2">
+                                <Condition>
+                                    <Expression>
+                                        <Param><![CDATA[true]]></Param>
+                                    </Expression>
+                                    <ActionSet>
+                                        <Action DefId="A0">
+                                            <Expression>
+                                                <Param><![CDATA[Partial Eligible]]></Param>
+                                            </Expression>
+                                        </Action>
+                                    </ActionSet>
+                                </Condition>
+                                <Condition>
+                                    <Expression>
+                                        <Param><![CDATA[false]]></Param>
+                                    </Expression>
+                                    <Partition DefId="C5">
+                                        <Condition>
+                                            <Expression>
+                                                <Param><![CDATA[One or More in Private]]></Param>
+                                            </Expression>
+                                            <ActionSet>
+                                                <Action DefId="A0">
+                                                    <Expression>
+                                                        <Param><![CDATA[Partial Eligible]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                            </ActionSet>
+                                        </Condition>
+                                    </Partition>
+                                </Condition>
+                                <Condition>
+                                    <Expression>
+                                        <Param><![CDATA[false]]></Param>
+                                    </Expression>
+                                    <Partition DefId="C5">
+                                        <Condition>
+                                            <Expression>
+                                                <Param><![CDATA[Both in Government or None]]></Param>
+                                            </Expression>
+                                            <ActionSet>
+                                                <Action DefId="A0">
+                                                    <Expression>
+                                                        <Param><![CDATA[Full Eligible]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                            </ActionSet>
+                                        </Condition>
+                                    </Partition>
+                                </Condition>
+                            </Partition>
+                        </Condition>
+                        <Condition>
+                            <Expression>
+                                <Text><![CDATA[<a number> is more than <a number>]]></Text>
+                                <Param><![CDATA[25]]></Param>
+                            </Expression>
+                            <Partition DefId="C2">
+                                <Condition>
+                                    <Expression>
+                                        <Param><![CDATA[true]]></Param>
+                                    </Expression>
+                                    <ActionSet>
+                                        <Action DefId="A0">
+                                            <Expression>
+                                                <Param><![CDATA[Partial Eligible]]></Param>
+                                            </Expression>
+                                        </Action>
+                                    </ActionSet>
+                                </Condition>
+                            </Partition>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[Single]]></Param>
+                    </Expression>
+                    <Partition DefId="C1">
+                        <Condition>
+                            <Expression>
+                                <Text><![CDATA[<a number> is more than <a number>]]></Text>
+                                <Param><![CDATA[25]]></Param>
+                            </Expression>
+                            <Partition DefId="C2">
+                                <Condition>
+                                    <Expression>
+                                        <Param><![CDATA[false]]></Param>
+                                    </Expression>
+                                    <Partition DefId="C3">
+                                        <Condition>
+                                            <Expression>
+                                                <Param><![CDATA[Private]]></Param>
+                                            </Expression>
+                                            <ActionSet>
+                                                <Action DefId="A0">
+                                                    <Expression>
+                                                        <Param><![CDATA[Partial Eligible]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                            </ActionSet>
+                                        </Condition>
+                                    </Partition>
+                                </Condition>
+                                <Condition>
+                                    <Expression>
+                                        <Param><![CDATA[false]]></Param>
+                                    </Expression>
+                                    <Partition DefId="C3">
+                                        <Condition>
+                                            <Expression>
+                                                <Param><![CDATA[Government or None]]></Param>
+                                            </Expression>
+                                            <Partition DefId="C4">
+                                                <Condition>
+                                                    <Expression>
+                                                        <Param><![CDATA[Male]]></Param>
+                                                    </Expression>
+                                                    <ActionSet>
+                                                        <Action DefId="A0">
+                                                            <Expression>
+                                                                <Param><![CDATA[Full Eligible]]></Param>
+                                                            </Expression>
+                                                        </Action>
+                                                    </ActionSet>
+                                                </Condition>
+                                            </Partition>
+                                        </Condition>
+                                        <Condition>
+                                            <Expression>
+                                                <Param><![CDATA[Government or None]]></Param>
+                                            </Expression>
+                                            <Partition DefId="C4">
+                                                <Condition>
+                                                    <Expression>
+                                                        <Param><![CDATA[Female]]></Param>
+                                                    </Expression>
+                                                    <Partition DefId="C5">
+                                                        <Condition>
+                                                            <Expression>
+                                                                <Param><![CDATA[One or More in Private]]></Param>
+                                                            </Expression>
+                                                            <ActionSet>
+                                                                <Action DefId="A0">
+                                                                    <Expression>
+                                                                        <Param><![CDATA[Partial Eligible]]></Param>
+                                                                    </Expression>
+                                                                </Action>
+                                                            </ActionSet>
+                                                        </Condition>
+                                                    </Partition>
+                                                </Condition>
+                                            </Partition>
+                                        </Condition>
+                                        <Condition>
+                                            <Expression>
+                                                <Param><![CDATA[Government or None]]></Param>
+                                            </Expression>
+                                            <Partition DefId="C4">
+                                                <Condition>
+                                                    <Expression>
+                                                        <Param><![CDATA[Female]]></Param>
+                                                    </Expression>
+                                                    <Partition DefId="C5">
+                                                        <Condition>
+                                                            <Expression>
+                                                                <Param><![CDATA[Both in Government or None]]></Param>
+                                                            </Expression>
+                                                            <ActionSet>
+                                                                <Action DefId="A0">
+                                                                    <Expression>
+                                                                        <Param><![CDATA[Full Eligible]]></Param>
+                                                                    </Expression>
+                                                                </Action>
+                                                            </ActionSet>
+                                                        </Condition>
+                                                    </Partition>
+                                                </Condition>
+                                            </Partition>
+                                        </Condition>
+                                    </Partition>
+                                </Condition>
+                            </Partition>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[Married]]></Param>
+                    </Expression>
+                    <Partition DefId="C2">
+                        <Condition>
+                            <Expression/>
+                            <Partition DefId="C3">
+                                <Condition>
+                                    <Expression>
+                                        <Param><![CDATA[One or More in Private]]></Param>
+                                    </Expression>
+                                    <ActionSet>
+                                        <Action DefId="A0">
+                                            <Expression>
+                                                <Param><![CDATA[Partial Eligible]]></Param>
+                                            </Expression>
+                                        </Action>
+                                    </ActionSet>
+                                </Condition>
+                            </Partition>
+                        </Condition>
+                        <Condition>
+                            <Expression/>
+                            <Partition DefId="C3">
+                                <Condition>
+                                    <Expression>
+                                        <Param><![CDATA[Government or None]]></Param>
+                                    </Expression>
+                                    <ActionSet>
+                                        <Action DefId="A0">
+                                            <Expression>
+                                                <Param><![CDATA[Full Eligible]]></Param>
+                                            </Expression>
+                                        </Action>
+                                    </ActionSet>
+                                </Condition>
+                            </Partition>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <ActionSet/>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <ActionSet/>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <ActionSet/>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <ActionSet/>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <ActionSet/>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <ActionSet/>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <ActionSet/>
+                </Condition>
+            </Partition>
+        </Contents>
+    </Body>
+    <Resources DefaultLocale="en_US">
+        <ResourceSet Locale="en_US">
+            <Data Name="Definitions(C0)#HeaderText"><![CDATA[Marital Status]]></Data>
+            <Data Name="Definitions(C1)#HeaderText"><![CDATA[Age]]></Data>
+            <Data Name="Definitions(C4)#HeaderText"><![CDATA[Gender]]></Data>
+            <Data Name="Definitions(C5)#HeaderText"><![CDATA[MHRSD Parents Employment Status]]></Data>
+            <Data Name="Definitions(C2)#HeaderText"><![CDATA[CCHI PHI Validation]]></Data>
+            <Data Name="Definitions(C3)#HeaderText"><![CDATA[MHRSD Employment Status]]></Data>
+            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Eligibility]]></Data>
+            <Data Name="Definitions(C1)[0]#HeaderText"><![CDATA[min]]></Data>
+            <Data Name="Definitions(C5)#Width"><![CDATA[361]]></Data>
+        </ResourceSet>
+    </Resources>
+</DT>
+</definition>
+</ilog.rules.studio.model.dt:DecisionTable>

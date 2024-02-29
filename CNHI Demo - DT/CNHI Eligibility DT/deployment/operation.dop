@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="CNHI Eligibility DT">
+  <name>CNHI-Eligibility-DT</name>
+  <uuid>ced17289-d69b-482d-a7d7-8e1f97f688d1</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#c3d88aa6-556e-4b0b-aa75-8bde17ff49bd"/>
+  <targetRuleProject href="../../CNHI%20Eligibility%20DT#b745e8ca-eee6-4842-b52c-2ebef2f116bf"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

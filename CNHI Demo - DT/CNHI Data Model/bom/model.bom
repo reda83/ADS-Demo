@@ -1,0 +1,94 @@
+
+package cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus;
+
+
+class ChronicDisease
+        extends java.lang.Enum
+        property ads.typeId "6"
+        property com.fasterxml.jackson.annotation.JsonTypeName "ChronicDisease"
+        #de.generated
+{
+    domain {static newEnumValue}
+    static final readonly cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.ChronicDisease newEnumValue
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "newEnumValue";
+}
+
+class Eligibility
+        extends java.lang.Enum
+        property ads.typeId "4"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Eligibility"
+        #de.generated
+{
+    domain {static fullEligible, static partialEligible}
+    static final readonly cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.Eligibility fullEligible
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "FullEligible";
+    static final readonly cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.Eligibility partialEligible
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "PartialEligible";
+}
+
+class Gender
+        extends java.lang.Enum
+        property ads.typeId "3"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Gender"
+        #de.generated
+{
+    domain {static female, static male}
+    static final readonly cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.Gender female
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Female";
+    static final readonly cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.Gender male
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Male";
+}
+
+class MHRSDEmploymentStatus
+        extends java.lang.Enum
+        property ads.typeId "2"
+        property com.fasterxml.jackson.annotation.JsonTypeName "MHRSDEmploymentStatus"
+        #de.generated
+{
+    domain {static governmentOrNone, static oneOrMoreInPrivate, static @private}
+    static final readonly cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MHRSDEmploymentStatus governmentOrNone
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "GovernmentOrNone";
+    static final readonly cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MHRSDEmploymentStatus oneOrMoreInPrivate
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "OneOrMoreInPrivate";
+    static final readonly cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MHRSDEmploymentStatus @private
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "Private";
+}
+
+class MHRSDParentsEmploymentStatus
+        extends java.lang.Enum
+        property ads.typeId "1"
+        property com.fasterxml.jackson.annotation.JsonTypeName "MHRSDParentsEmploymentStatus"
+        #de.generated
+{
+    domain {static bothInGovernmentOrNone, static oneOrMoreInPrivate}
+    static final readonly cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MHRSDParentsEmploymentStatus bothInGovernmentOrNone
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "BothInGovernmentOrNone";
+    static final readonly cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MHRSDParentsEmploymentStatus oneOrMoreInPrivate
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "OneOrMoreInPrivate";
+}
+
+class MaritalStatus
+        extends java.lang.Enum
+        property ads.typeId "5"
+        property com.fasterxml.jackson.annotation.JsonTypeName "MaritalStatus"
+        #de.generated
+{
+    domain {static married, static single}
+    static final readonly cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MaritalStatus married
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Married";
+    static final readonly cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MaritalStatus single
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Single";
+}
+

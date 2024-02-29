@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Checking MHRSD Parents Employment Status</name>
+  <uuid>37732e6a-91f7-471c-8776-189c86eff94d</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	'MHRSD Parents Employment Status' is "One or More Private"
+	and 'CCHI PHI Validation for less than 25' is "Check MHRSD Parents Employment Status"
+then
+	set decision to "Set Partial Eligible" ;
+else 
+	set decision to "Set Full Eligible" ; 
+    ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Single</name>
+  <uuid>4a61c98c-1475-487e-8948-dffc6e4a2ed3</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	'Marital Status' is "Single"
+then
+	set decision to "Check CCHI PHI Validation" ; ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>5322c4f9-e3b8-4c10-94f0-824682eb3721</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="diagram" namespace="">
+    <extensionElements>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_0" name="Age">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.Double" collection="false" name="Age"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_0_ii" name="Age" typeRef="java.lang.Double"/>
+    </inputData>
+    <decision id="node_1" name="Decision">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.String" collection="false" name="Decision 11"/>
+                <input bomType="java.lang.String" collection="false" name="Decision 10"/>
+                <input bomType="java.lang.String" collection="false" name="Decision 9"/>
+                <output bomType="java.lang.String" collection="false" name="Decision"/>
+                <rule defaultRule="false" href="node_1/Full%20Eligibility%20Check.drl" kind="BusinessRule" name="Full Eligibility Check"/>
+                <rule defaultRule="false" href="node_1/Partial%20Eligibility%20Check.drl" kind="BusinessRule" name="Partial Eligibility Check"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Decision" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_11"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_10"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_9"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_2" name="Marital Status">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.String" collection="false" name="Marital Status"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_2_ii" name="Marital Status" typeRef="java.lang.String"/>
+    </inputData>
+    <inputData id="node_3" name="CCHI PHI Validation">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.String" collection="false" name="CCHI PHI Validation"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_3_ii" name="CCHI PHI Validation" typeRef="java.lang.String"/>
+    </inputData>
+    <inputData id="node_4" name="MHRSD Parents Employment Status">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.String" collection="false" name="MHRSD Parents Employment Status"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_4_ii" name="MHRSD Parents Employment Status" typeRef="java.lang.String"/>
+    </inputData>
+    <inputData id="node_5" name="MHRSD Employment Status">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.String" collection="false" name="MHRSD Employment Status"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_5_ii" name="MHRSD Employment Status" typeRef="java.lang.String"/>
+    </inputData>
+    <inputData id="node_6" name="Gender">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.String" collection="false" name="Gender"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_6_ii" name="Gender" typeRef="java.lang.String"/>
+    </inputData>
+    <decision id="node_7" name="Decision 7">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.String" collection="false" name="Marital Status"/>
+                <output bomType="java.lang.String" collection="false" name="Decision 7"/>
+                <rule defaultRule="false" href="node_7/Single.drl" kind="BusinessRule" name="Single"/>
+                <rule defaultRule="false" href="node_7/Married.drl" kind="BusinessRule" name="Married"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_7_ii" name="Decision 7" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_9" name="Decision 9">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="false" name="Age"/>
+                <input bomType="java.lang.String" collection="false" name="CCHI PHI Validation"/>
+                <input bomType="java.lang.String" collection="false" name="MHRSD Employment Status"/>
+                <input bomType="java.lang.String" collection="false" name="Decision 7"/>
+                <output bomType="java.lang.String" collection="false" name="Decision 9"/>
+                <rule defaultRule="false" href="node_9/CCHI%20Yes.drl" kind="BusinessRule" name="CCHI Yes"/>
+                <rule defaultRule="false" href="node_9/CCHI%20No%20and%20at%20most%2025.drl" kind="BusinessRule" name="CCHI No and at most 25"/>
+                <rule defaultRule="false" href="node_9/CCHI%20No%20and%20more%20than%2025.drl" kind="BusinessRule" name="CCHI No and more than 25"/>
+                <rule defaultRule="false" href="node_9/Married%20and%20emp%20Status%20one%20or%20more.drl" kind="BusinessRule" name="Married and emp Status one or more"/>
+                <rule defaultRule="false" href="node_9/Married%20and%20emp%20Status%20gov%20or%20none.drl" kind="BusinessRule" name="Married and emp Status gov or none"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_9_ii" name="Decision 9" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_7"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_10" name="Decision 10">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.String" collection="false" name="MHRSD Parents Employment Status"/>
+                <input bomType="java.lang.String" collection="false" name="MHRSD Employment Status"/>
+                <input bomType="java.lang.String" collection="false" name="Gender"/>
+                <input bomType="java.lang.String" collection="false" name="Decision 9"/>
+                <output bomType="java.lang.String" collection="false" name="Decision 10"/>
+                <rule defaultRule="false" href="node_10/Check%20MHRSD%20Parent%20Employment%20Status%20One%20or%20More.drl" kind="BusinessRule" name="Check MHRSD Parent Employment Status One or More"/>
+                <rule defaultRule="false" href="node_10/Check%20MHRSD%20Parent%20Employment%20Status%20Gov%20or%20None.drl" kind="BusinessRule" name="Check MHRSD Parent Employment Status Gov or None"/>
+                <rule defaultRule="false" href="node_10/Check%20MHRSD%20Emp%20Status%20Private.drl" kind="BusinessRule" name="Check MHRSD Emp Status Private"/>
+                <rule defaultRule="false" href="node_10/Check%20MHRSD%20Emp%20Status%20Gov%20or%20None%20Male.drl" kind="BusinessRule" name="Check MHRSD Emp Status Gov or None Male"/>
+                <rule defaultRule="false" href="node_10/Check%20MHRSD%20Emp%20Status%20Gov%20or%20None%20Female.drl" kind="BusinessRule" name="Check MHRSD Emp Status Gov or None Female"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_10_ii" name="Decision 10" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_4"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_6"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_9"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_11" name="Decision 11">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.String" collection="false" name="MHRSD Parents Employment Status"/>
+                <input bomType="java.lang.String" collection="false" name="Decision 10"/>
+                <output bomType="java.lang.String" collection="false" name="Decision 11"/>
+                <rule defaultRule="false" href="node_11/MHRSD%20Parent%20one%20or%20more.drl" kind="BusinessRule" name="MHRSD Parent one or more"/>
+                <rule defaultRule="false" href="node_11/MHRSD%20Parent%20gov%20or%20none.drl" kind="BusinessRule" name="MHRSD Parent gov or none"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_11_ii" name="Decision 11" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_4"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_10"/>
+        </informationRequirement>
+    </decision>
+</definitions>
+</definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

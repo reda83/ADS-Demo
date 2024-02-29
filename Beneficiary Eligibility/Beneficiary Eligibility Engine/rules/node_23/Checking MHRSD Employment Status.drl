@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Checking MHRSD Employment Status</name>
+  <uuid>c2bcb694-24df-4859-a60c-f9da21d82c4a</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	Gender is "Male"
+then
+	set decision to "Set Full Eligible" ;
+else 
+	 set decision to "MHRSD Parents Employment Status"; ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

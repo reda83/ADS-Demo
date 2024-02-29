@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>8de6a354-b797-490d-9f09-26113336a1bb</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="diagram" namespace="">
+    <extensionElements>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_0" name="MHRSD Employment Status">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MHRSDEmploymentStatus" collection="false" name="MHRSD Employment Status"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_0_ii" name="MHRSD Employment Status" typeRef="cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MHRSDEmploymentStatus"/>
+    </inputData>
+    <decision id="node_1" name="Decision">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MHRSDEmploymentStatus" collection="false" name="MHRSD Employment Status"/>
+                <input bomType="cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MaritalStatus" collection="false" name="Marital Status"/>
+                <output bomType="java.lang.String" collection="false" name="Decision"/>
+                <rule defaultRule="false" href="node_1/Eligibility%20DT.dmt" kind="DecisionTable" name="Eligibility DT"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Decision" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_2" name="Marital Status">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MaritalStatus" collection="false" name="Marital Status"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_2_ii" name="Marital Status" typeRef="cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MaritalStatus"/>
+    </inputData>
+</definitions>
+</definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

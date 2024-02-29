@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>f9aeb005-d256-4070-9db0-5ae935648f51</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="diagram" namespace="">
+    <extensionElements>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_0" name="Marital Status">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.String" collection="false" name="Marital Status"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_0_ii" name="Marital Status" typeRef="java.lang.String"/>
+    </inputData>
+    <inputData id="node_2" name="Age">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.Double" collection="false" name="Age"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_2_ii" name="Age" typeRef="java.lang.Double"/>
+    </inputData>
+    <inputData id="node_3" name="CCHI PHI Validation">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.Boolean" collection="false" name="CCHI PHI Validation"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_3_ii" name="CCHI PHI Validation" typeRef="java.lang.Boolean"/>
+    </inputData>
+    <inputData id="node_4" name="MHRSD Parents Employment Status">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.String" collection="false" name="MHRSD Parents Employment Status"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_4_ii" name="MHRSD Parents Employment Status" typeRef="java.lang.String"/>
+    </inputData>
+    <inputData id="node_5" name="MHRSD Employment Status">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.String" collection="false" name="MHRSD Employment Status"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_5_ii" name="MHRSD Employment Status" typeRef="java.lang.String"/>
+    </inputData>
+    <inputData id="node_6" name="Gender">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.String" collection="false" name="Gender"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_6_ii" name="Gender" typeRef="java.lang.String"/>
+    </inputData>
+    <decision id="node_7" name="MOI">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.String" collection="false" name="Marital Status"/>
+                <output bomType="java.lang.String" collection="false" name="MOI"/>
+                <rule defaultRule="false" href="node_7/Marital%20Status.drl" kind="BusinessRule" name="Marital Status"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_7_ii" name="MOI" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_8" name="Less than 25 for single">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="false" name="Age"/>
+                <input bomType="java.lang.String" collection="false" name="MOI"/>
+                <output bomType="java.lang.String" collection="false" name="Less than 25 for single"/>
+                <rule defaultRule="false" href="node_8/PHI%20Validation%20for%20less%20than%20or%20equal%2025%20years%20for%20single.drl" kind="BusinessRule" name="PHI Validation for less than or equal 25 years for single"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_8_ii" name="Less than 25 for single" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_7"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_9" name="more than 25 for single">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="false" name="Age"/>
+                <input bomType="java.lang.String" collection="false" name="MOI"/>
+                <output bomType="java.lang.String" collection="false" name="more than 25 for single"/>
+                <rule defaultRule="false" href="node_9/PHI%20Validation%20for%20more%20than%2025%20years%20for%20single.drl" kind="BusinessRule" name="PHI Validation for more than 25 years for single"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_9_ii" name="more than 25 for single" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_7"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_10" name="MHRSD Employment Status for Married">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.String" collection="false" name="MHRSD Employment Status"/>
+                <input bomType="java.lang.String" collection="false" name="MOI"/>
+                <output bomType="java.lang.String" collection="false" name="MHRSD Employment Status for Married"/>
+                <rule defaultRule="false" href="node_10/Married%20BR.drl" kind="BusinessRule" name="Married BR"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_10_ii" name="MHRSD Employment Status for Married" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_7"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_11" name="CCHI PHI Validation for less than 25">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Boolean" collection="false" name="CCHI PHI Validation"/>
+                <input bomType="java.lang.String" collection="false" name="Less than 25 for single"/>
+                <output bomType="java.lang.String" collection="false" name="CCHI PHI Validation for less than 25"/>
+                <rule defaultRule="false" href="node_11/CCHI%20PHI%20Validation%20Check.drl" kind="BusinessRule" name="CCHI PHI Validation Check"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_11_ii" name="CCHI PHI Validation for less than 25" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_8"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_12" name="CCHI PHI Validation more than 25 for single">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Boolean" collection="false" name="CCHI PHI Validation"/>
+                <input bomType="java.lang.String" collection="false" name="more than 25 for single"/>
+                <output bomType="java.lang.String" collection="false" name="CCHI PHI Validation more than 25 for single"/>
+                <rule defaultRule="false" href="node_12/CCHI%20PHI%20Validation%20Check.drl" kind="BusinessRule" name="CCHI PHI Validation Check"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_12_ii" name="CCHI PHI Validation more than 25 for single" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_9"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_13" name="Private">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.String" collection="false" name="MHRSD Employment Status"/>
+                <input bomType="java.lang.String" collection="false" name="MHRSD Employment Status for Married"/>
+                <output bomType="java.lang.String" collection="false" name="Private"/>
+                <rule defaultRule="false" href="node_13/Checking%20MHRSD%20Employment%20Status.drl" kind="BusinessRule" name="Checking MHRSD Employment Status"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_13_ii" name="Private" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_10"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_14" name="Government Or None">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.String" collection="false" name="MHRSD Employment Status"/>
+                <input bomType="java.lang.String" collection="false" name="MHRSD Employment Status for Married"/>
+                <output bomType="java.lang.String" collection="false" name="Government Or None"/>
+                <rule defaultRule="false" href="node_14/Checking%20MHRSD%20Employment%20Status.drl" kind="BusinessRule" name="Checking MHRSD Employment Status"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_14_ii" name="Government Or None" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_10"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_15" name="Full Eligible">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.String" collection="false" name="Government Or None"/>
+                <input bomType="java.lang.String" collection="false" name="Government Or None less than 25"/>
+                <output bomType="java.lang.String" collection="false" name="Full Eligible"/>
+                <rule defaultRule="false" href="node_15/Setting%20Eligibility.drl" kind="BusinessRule" name="Setting Eligibility"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_15_ii" name="Full Eligible" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_14"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_20"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_16" name="Partial Eligible">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.String" collection="false" name="One Or More In Private less than 25"/>
+                <input bomType="java.lang.String" collection="false" name="Private"/>
+                <input bomType="java.lang.String" collection="false" name="CCHI PHI Validation more than 25 for single"/>
+                <input bomType="java.lang.String" collection="false" name="CCHI PHI Validation for less than 25"/>
+                <input bomType="java.lang.String" collection="false" name="Private more than 25"/>
+                <output bomType="java.lang.String" collection="false" name="Partial Eligible"/>
+                <rule defaultRule="false" href="node_16/Setting%20Eligibility.drl" kind="BusinessRule" name="Setting Eligibility"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_16_ii" name="Partial Eligible" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_19"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_13"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_12"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_11"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_22"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_18" name="MHRSD Parents Employment Status Single Less than 25">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.String" collection="false" name="MHRSD Parents Employment Status"/>
+                <input bomType="java.lang.String" collection="false" name="CCHI PHI Validation for less than 25"/>
+                <output bomType="java.lang.String" collection="false" name="MHRSD Parents Employment Status Single Less than 25"/>
+                <rule defaultRule="false" href="node_18/Checking%20MHRSD%20Parents%20Employment%20Status.drl" kind="BusinessRule" name="Checking MHRSD Parents Employment Status"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_18_ii" name="MHRSD Parents Employment Status Single Less than 25" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_4"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_11"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_19" name="One Or More In Private less than 25">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.String" collection="false" name="MHRSD Parents Employment Status Single Less than 25"/>
+                <output bomType="java.lang.String" collection="false" name="One Or More In Private less than 25"/>
+                <rule defaultRule="false" href="node_19/Checking%20MHRSD%20Parents%20Employment%20Status.drl" kind="BusinessRule" name="Checking MHRSD Parents Employment Status"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_19_ii" name="One Or More In Private less than 25" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_18"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_20" name="Government Or None less than 25">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.String" collection="false" name="MHRSD Parents Employment Status Single Less than 25"/>
+                <output bomType="java.lang.String" collection="false" name="Government Or None less than 25"/>
+                <rule defaultRule="false" href="node_20/Checking%20MHRSD%20Parents%20Employment%20Status%20.drl" kind="BusinessRule" name="Checking MHRSD Parents Employment Status "/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_20_ii" name="Government Or None less than 25" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_18"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_21" name="MHRSD Employment Status more than 25">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.String" collection="false" name="MHRSD Employment Status"/>
+                <input bomType="java.lang.String" collection="false" name="CCHI PHI Validation more than 25 for single"/>
+                <output bomType="java.lang.String" collection="false" name="MHRSD Employment Status more than 25"/>
+                <rule defaultRule="false" href="node_21/Checking%20MHRSD%20Employment%20Status.drl" kind="BusinessRule" name="Checking MHRSD Employment Status"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_21_ii" name="MHRSD Employment Status more than 25" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_12"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_22" name="Private more than 25">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.String" collection="false" name="MHRSD Employment Status more than 25"/>
+                <output bomType="java.lang.String" collection="false" name="Private more than 25"/>
+                <rule defaultRule="false" href="node_22/Checking%20MHRSD%20Employment%20Status.drl" kind="BusinessRule" name="Checking MHRSD Employment Status"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_22_ii" name="Private more than 25" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_21"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_23" name="Government or None More than 25">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.String" collection="false" name="Gender"/>
+                <input bomType="java.lang.String" collection="false" name="MHRSD Employment Status more than 25"/>
+                <output bomType="java.lang.String" collection="false" name="Government or None More than 25"/>
+                <rule defaultRule="false" href="node_23/Checking%20MHRSD%20Employment%20Status.drl" kind="BusinessRule" name="Checking MHRSD Employment Status"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_23_ii" name="Government or None More than 25" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_6"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_21"/>
+        </informationRequirement>
+    </decision>
+</definitions>
+</definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

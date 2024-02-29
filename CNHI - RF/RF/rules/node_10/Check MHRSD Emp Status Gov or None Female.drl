@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Check MHRSD Emp Status Gov or None Female</name>
+  <uuid>9bfdadb0-52e7-41b5-b7d8-186bf55c818a</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	'MHRSD Employment Status' is "Government or None"
+	and 'Decision 9' is "Check MHRSD Employment Status"
+    and 'Gender' is "Female" 
+then
+	set decision to "Check MHRSD Parents Employment Status";]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

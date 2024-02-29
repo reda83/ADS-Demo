@@ -1,0 +1,13 @@
+
+# cp4admin._cnhi_eligibility_engine_demo.beneficiary_eligibility.maritalstatus.BeneficiaryStatus
+cp4admin._cnhi_eligibility_engine_demo.beneficiary_eligibility.maritalstatus.BeneficiaryStatus#concept.label = Beneficiary Status
+cp4admin._cnhi_eligibility_engine_demo.beneficiary_eligibility.maritalstatus.BeneficiaryStatus.BeneficiaryStatus(cp4admin._cnhi_eligibility_engine_demo.beneficiary_eligibility.maritalstatus.MaritalStatus)#phrase.navigation = a new {Beneficiary Status} where {0, Marital Status}
+cp4admin._cnhi_eligibility_engine_demo.beneficiary_eligibility.maritalstatus.BeneficiaryStatus.maritalStatus#phrase.action = set the Marital Status of {this} to {Marital Status}
+cp4admin._cnhi_eligibility_engine_demo.beneficiary_eligibility.maritalstatus.BeneficiaryStatus.maritalStatus#phrase.clearer = clear the Marital Status of {this}
+cp4admin._cnhi_eligibility_engine_demo.beneficiary_eligibility.maritalstatus.BeneficiaryStatus.maritalStatus#phrase.navigation = {Marital Status} of {this}
+
+# cp4admin._cnhi_eligibility_engine_demo.beneficiary_eligibility.maritalstatus.MaritalStatus
+cp4admin._cnhi_eligibility_engine_demo.beneficiary_eligibility.maritalstatus.MaritalStatus#concept.label = Marital Status
+cp4admin._cnhi_eligibility_engine_demo.beneficiary_eligibility.maritalstatus.MaritalStatus.divorced#instance.label = Divorced
+cp4admin._cnhi_eligibility_engine_demo.beneficiary_eligibility.maritalstatus.MaritalStatus.married#instance.label = Married
+cp4admin._cnhi_eligibility_engine_demo.beneficiary_eligibility.maritalstatus.MaritalStatus.single#instance.label = Single

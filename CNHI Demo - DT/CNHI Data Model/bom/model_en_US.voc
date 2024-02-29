@@ -1,0 +1,30 @@
+
+# cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.ChronicDisease
+cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.ChronicDisease#concept.label = Chronic Disease
+cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.ChronicDisease.newEnumValue#instance.label = new enum value
+
+# cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.Eligibility
+cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.Eligibility#concept.label = Eligibility
+cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.Eligibility.fullEligible#instance.label = Full Eligible
+cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.Eligibility.partialEligible#instance.label = Partial Eligible
+
+# cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.Gender
+cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.Gender#concept.label = Gender
+cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.Gender.female#instance.label = Female
+cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.Gender.male#instance.label = Male
+
+# cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MHRSDEmploymentStatus
+cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MHRSDEmploymentStatus#concept.label = MHRSD Employment Status
+cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MHRSDEmploymentStatus.governmentOrNone#instance.label = Government or None
+cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MHRSDEmploymentStatus.oneOrMoreInPrivate#instance.label = One or More in Private
+cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MHRSDEmploymentStatus.private#instance.label = Private
+
+# cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MHRSDParentsEmploymentStatus
+cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MHRSDParentsEmploymentStatus#concept.label = MHRSD Parents Employment Status
+cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MHRSDParentsEmploymentStatus.bothInGovernmentOrNone#instance.label = Both in Government or None
+cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MHRSDParentsEmploymentStatus.oneOrMoreInPrivate#instance.label = One or More in Private
+
+# cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MaritalStatus
+cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MaritalStatus#concept.label = Marital Status
+cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MaritalStatus.married#instance.label = Married
+cp4admin._cnhi_eligibility_engine_demo.cnhi_demo___dt.parentemploymentstatus.MaritalStatus.single#instance.label = Single
